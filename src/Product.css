@@ -9,19 +9,23 @@
     max-height:400px;
     min-width:100px;
     background-color:white;
-    z-index:1;
-}
-.product > img{
-    max-height:200px;
-    width: 100%;
-    object-fit: contain;
-    margin-bottom: 15px;
+    z-index:1;   
 }
 .product_price{
     margin-top:5px;
 }
 .product_info{
+    text-align:left;
     height:100px;
+    margin-bottom: 15px;
+}
+.product_rating{
+    display:flex;
+}
+.product > img{
+    max-height:200px;
+    width: 100%;
+    object-fit: contain;
     margin-bottom: 15px;
 }
 .product > button{
@@ -30,5 +34,4 @@
     margin-top:10px;
     border-color:#a88734 #9c7e31 #846a29;
     color:#111;
-
 }

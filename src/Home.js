@@ -14,10 +14,20 @@ function Home() {
                className="home_image"/>
                <div className="home_row">
                     <Product/>
+                    <Product/>                
                </div>
                <div className="home_row">
+                    <Product 
+                    title="the leap stick" 
+                    price={13.08} 
+                    image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
+                    rating={5}/>
+                    <Product/>
+                    <Product/>              
                </div>
                <div className="home_row">
+                    <Product/>
+                    <Product/>
                </div>
 
 
