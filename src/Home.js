@@ -15,7 +15,7 @@ function Home() {
                <div className="home_row">
                     <Product
                     id={1}  
-                    title="the leap stick to use in the night with great lamp,in montagne, also in forest" 
+                    title="the leap stick to use in the night with great lamp,in montagne, also in forest,everywhere you want ,you'll not regret this product" 
                     price={24.56} 
                     image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
                     rating={5}/>

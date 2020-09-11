@@ -14,12 +14,11 @@ function Checkout() {
           alt=""
         />
         <div className="checkout_title">
-          <h2>Your shopping Basket</h2>
-          {basket.map(b=>
-            <BasketItem key={b.id} item={b}/>
-          )}
-                   
+          <h2>Your shopping Basket</h2>          
         </div>
+        {basket.map(b=>
+          <BasketItem key={b.id} item={b}/>
+        )}
       </div>
       <div className="checkout_right">
         <Subtotal/>

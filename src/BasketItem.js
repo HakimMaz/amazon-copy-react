@@ -1,4 +1,5 @@
 import React from 'react'
+import './BasketItem.css'
 import { useStateValue } from './StateProvider';
 
 function BasketItem(props) {
@@ -15,9 +16,9 @@ function BasketItem(props) {
     return (
       
         <div className="basketitem">
-          <img src="" alt="" className="basketitem_image"/>
+          <img src={props.item.image} alt="" className="basketitem_image"/>
           <div className="basketitem_info">
-             <h2></h2>
+             <p>{props.item.title}</p>
              <p>${props.item.price}</p>
              <p>rating</p>
              <button onClick={()=>removeItemFromBasket(props.item.id,props.item.price)}>Remove from Basket</button>
