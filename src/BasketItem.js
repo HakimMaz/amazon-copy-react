@@ -3,11 +3,12 @@ import { useStateValue } from './StateProvider';
 
 function BasketItem(props) {
     const [{basket},dispatch]=useStateValue();
-    const removeItemFromBasket =(id)=>{
+    const removeItemFromBasket =(id,price)=>{
         dispatch({
             type:"REMOVE_FROM_BASKET",
             payload:{
-                id:id
+                id:id,
+                price:price,
             }
         })       
     }
@@ -17,9 +18,9 @@ function BasketItem(props) {
           <img src="" alt="" className="basketitem_image"/>
           <div className="basketitem_info">
              <h2></h2>
-             <p></p>
+             <p>${props.item.price}</p>
              <p>rating</p>
-             <button onClick={()=>removeItemFromBasket(props.index)}>Remove from Basket</button>
+             <button onClick={()=>removeItemFromBasket(props.item.id,props.item.price)}>Remove from Basket</button>
           </div>
             
         </div>
