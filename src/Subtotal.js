@@ -12,7 +12,7 @@ function Subtotal() {
             <>
               <p>
                 Subtotal ({basketCounter} items):
-                <strong>${totalInBasket}</strong>
+                <strong>${basketCounter!==0?totalInBasket:0}</strong>
                 
               </p>
               <small className="subtotal_gift">
