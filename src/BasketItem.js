@@ -9,7 +9,6 @@ function BasketItem({id,title,price,rating,image}) {
       type: "REMOVE_FROM_BASKET",
       payload: {
         id: id,
-        price: price,
       },
     });
   };
