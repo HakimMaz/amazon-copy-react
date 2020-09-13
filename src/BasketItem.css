@@ -1,25 +1,25 @@
 .basketitem{
     display:flex;
-    margin-top:10px;
+    margin-top:20px;
     margin-left:20px;
-    padding:5px;
+    /* padding:5px;
     max-height:300px;
-    min-width: 100px;
+    min-width: 100px; */
 }
 .basketitem_image{
-    width:150px;
-    height:200px;
+    object-fit:contain;
+    width:180px;
+    height:180px;
 }
 .basketitem_info{
-    margin-left:20px;
+    padding-left:20px;
 }
-.basketitem_info >p{
-    margin-top:5px;
+.basketitem_title{
     font-size:20px;
-    font-weight: 700;
+    font-weight: 800;
 }
 .basketitem_info >button{
-    margin-top:20px;
+    margin-top:10px;
     background: #f0c04b;
     border: 1px solid;
     color:#111;
