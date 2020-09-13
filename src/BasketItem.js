@@ -4,6 +4,7 @@ import { useStateValue } from './StateProvider';
 
 function BasketItem(props) {
     const [{basket},dispatch]=useStateValue();
+    console.log("----",props.item.rating);
     const removeItemFromBasket =(id,price)=>{
         dispatch({
             type:"REMOVE_FROM_BASKET",
@@ -13,14 +14,22 @@ function BasketItem(props) {
             }
         })       
     }
+    
     return (
-      
+        
         <div className="basketitem">
           <img src={props.item.image} alt="" className="basketitem_image"/>
           <div className="basketitem_info">
              <p>{props.item.title}</p>
              <p>${props.item.price}</p>
-             <p>rating</p>
+             <div className="basketitem_rating">
+             {   
+                 Array(props.item.rating)
+                .fill()
+                .map((_,i)=>(
+                <p key={i}>⭐</p>
+                 ))}
+             </div>
              <button onClick={()=>removeItemFromBasket(props.item.id,props.item.price)}>Remove from Basket</button>
           </div>
             

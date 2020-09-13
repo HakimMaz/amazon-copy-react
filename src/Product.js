@@ -4,13 +4,15 @@ import { useStateValue } from "./StateProvider";
 function Product({id,title,price,rating,image}) {
   const[{basket},dispatch]=useStateValue();
   const addItemToBasket=()=>{
+    console.log("i'm just here ")
     dispatch({
       type:'ADD_TO_BASKET',
       payload:{
         id:id,
         title:title,
         price:price,
-        image:image
+        image:image,
+        rating:rating
       }
     })
   }
