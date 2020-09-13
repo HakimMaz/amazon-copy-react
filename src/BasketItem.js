@@ -2,10 +2,9 @@ import React from "react";
 import "./BasketItem.css";
 import { useStateValue } from "./StateProvider";
 
-function BasketItem(props) {
+function BasketItem({id,title,price,rating,image}) {
   const [{ basket }, dispatch] = useStateValue();
-  console.log("----", props.item.rating);
-  const removeItemFromBasket = (id, price) => {
+  const removeItemFromBasket = () => {
     dispatch({
       type: "REMOVE_FROM_BASKET",
       payload: {
@@ -17,22 +16,22 @@ function BasketItem(props) {
 
   return (
     <div className="basketitem">
-      <img src={props.item.image} alt="" className="basketitem_image" />
+      <img src={image} alt="" className="basketitem_image" />
       <div className="basketitem_info">
-        <p className="basketitem_title">{props.item.title}</p>
+        <p className="basketitem_title">{title}</p>
         <p className="basketitem_price">
             <small>$</small>
-            <strong>{props.item.price}</strong>
+            <strong>{price}</strong>
         </p>
         <div className="basketitem_rating">
-          {Array(props.item.rating)
+          {Array(rating)
             .fill()
             .map((_, i) => (
               <p key={i}>⭐</p>
             ))}
         </div>
         <button
-          onClick={() => removeItemFromBasket(props.item.id, props.item.price)}
+          onClick={() => removeItemFromBasket()}
         >
           Remove from Basket
         </button>

@@ -1,7 +1,7 @@
+import BasketItem from "./BasketItem";
+
 export const initialState = {
   basket: [],
-  basketCounter:0,
-  totalInBasket:0,
 };
 //get basketTotal usig reduce function
 export const getBasketTotal=(basket)=>{
@@ -16,15 +16,22 @@ const reducer = (state=initialState, action) => {
       return {
         ...state,
         basket: [...state.basket, action.payload],
-        basketCounter:state.basketCounter+1,
-        //totalInBasket:state.totalInBasket+action.payload.price,
+       
       };
     case "REMOVE_FROM_BASKET":
+        const index=state.basket.findIndex(
+            (basketItem)=> basketItem.id===action.payload.id);
+        let newBasket=[...state.basket];
+        if(index >=0){
+            newBasket.splice(index,1);
+        }
+        else{
+            console.warn(`Cant remove product (id:${action.payload.id}) as its not in the basket`);
+        }
         return {
-            ...state,           
-            basket:state.basket.filter(b=>b.id!==action.payload.id),
-            basketCounter:state.basketCounter-1,
-            totalInBasket:state.totalInBasket-action.payload.price,
+            ...state,            
+            basket:newBasket,
+           // totalInBasket:state.totalInBasket-action.payload.price,
         }
     default:
         return state;
