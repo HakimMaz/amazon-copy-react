@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { useStateValue } from "./StateProvider";
 function Header() {
-  const [{basket},dispatch]=useStateValue();
-  console.log("basket length",basket.length);
+  const [{basket,currentUser},dispatch]=useStateValue();
+  console.log("basket length",currentUser);
   return (
     <div className="header">
       <Link to="/">
@@ -23,8 +23,8 @@ function Header() {
       <div className="header_nav">
       <Link to="/login">
         <div className="header_option">
-          <span className="header_optionLineOne"> Hello Guest</span>
-          <span className="header_optionLineTwo"> Sign In</span>
+          <span className="header_optionLineOne">hello guest </span>
+          <span className="header_optionLineTwo"> {currentUser?'Sign Out':'Sign In'}</span>
         </div>
       </Link>
         <div className="header_option">

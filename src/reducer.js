@@ -2,6 +2,7 @@ import BasketItem from "./BasketItem";
 
 export const initialState = {
   basket: [],
+  currentUser:null,
 };
 //get basketTotal usig reduce function
 export const getBasketTotal=(basket)=>{
@@ -33,6 +34,14 @@ const reducer = (state=initialState, action) => {
             basket:newBasket,
            // totalInBasket:state.totalInBasket-action.payload.price,
         }
+        case "GET_LOGGED_USER":
+          console.log(" we are here")
+
+        return {
+          ...state,
+          currentUser:action.payload.user
+        }
+
     default:
         return state;
   }
