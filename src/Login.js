@@ -9,12 +9,21 @@ function Login() {
   const [password, setPassword] = useState("");
   const signIn= e =>{
       e.preventDefault();
+      auth
+         .signInWithEmailAndPassword(email,password)
+         .then( auth =>{
+             if(auth){
+                history.push('/');
+             }
+         })
+         .catch(error=>alert(error.message))
      
   }
   const register = e =>{
       e.preventDefault();
-      auth.createUserWithEmailAndPassword(email,password)
-          .then((auth)=>{
+      auth
+          .createUserWithEmailAndPassword(email,password)
+          .then( auth =>{
               //succesfully created user with email and password
               if(auth){
                   history.push('/');
