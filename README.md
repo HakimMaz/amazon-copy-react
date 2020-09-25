@@ -7,7 +7,7 @@ In the project directory, you can:<br />
 #First clone the project from the repository:<br />
 https://github.com/HakimMaz/amazon-copy-react.git<br />
 
-then you can run : <br />
+then you run  : <br />
 ### npm i <br />
 to install all the dependencies from in package.json
 
