@@ -1,8 +1,8 @@
-import React from "react";
+import React,{forwardRef} from "react";
 import "./BasketItem.css";
 import { useStateValue } from "./StateProvider";
 
-function BasketItem({id,title,price,rating,image}) {
+const BasketItem=forwardRef(({id,title,price,rating,image},ref) =>{
   const [{ basket }, dispatch] = useStateValue();
   const removeItemFromBasket = () => {
     dispatch({
@@ -14,7 +14,7 @@ function BasketItem({id,title,price,rating,image}) {
   };
 
   return (
-    <div className="basketitem">
+    <div className="basketitem" ref={ref}>
       <img src={image} alt="" className="basketitem_image" />
       <div className="basketitem_info">
         <p className="basketitem_title">{title}</p>
@@ -37,6 +37,7 @@ function BasketItem({id,title,price,rating,image}) {
       </div>
     </div>
   );
-}
 
+}
+)
 export default BasketItem;

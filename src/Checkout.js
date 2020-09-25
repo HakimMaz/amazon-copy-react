@@ -3,8 +3,13 @@ import "./Checkout.css";
 import Subtotal from "./Subtotal";
 import BasketItem from "./BasketItem";
 import { useStateValue } from "./StateProvider";
+import FlipMove from 'react-flip-move';
 function Checkout() {
   const[{basket,currentUser},dispatch]=useStateValue();
+  const customEnterAnimation = {
+    from: { transform: 'scale(0.5, 1)' },
+    to:   { transform: 'scale(1, 1)' }
+  };
   return (
     <div className="checkout">
       <div className="checkout_left">
@@ -17,14 +22,16 @@ function Checkout() {
         <div className="checkout_title">
           <h2>Your shopping Basket</h2>          
         </div>
+        <FlipMove leaveAnimation="elevator">
         {basket.map(b=>
-          <BasketItem 
+          <BasketItem key={b.id}
           id={b.id} 
           title={b.title} 
           price={b.price} 
           rating={b.rating} 
           image={b.image} />
         )}
+        </FlipMove>
       </div>
       <div className="checkout_right">
         <Subtotal/>
